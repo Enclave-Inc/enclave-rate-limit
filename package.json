@@ -1,0 +1,41 @@
+{
+  "name": "@enclave/rate-limit",
+  "version": "0.1.0",
+  "description": "Shared rate-limiting for Enclave Supabase edge APIs (provider-swappable)",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./postgres": {
+      "types": "./dist/postgres-provider.d.ts",
+      "import": "./dist/postgres-provider.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "@supabase/supabase-js": "^2.0.0"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.49.8",
+    "@types/node": "^22.15.21",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Enclave-Inc/enclave-rate-limit"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
